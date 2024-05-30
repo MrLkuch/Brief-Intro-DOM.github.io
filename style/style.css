@@ -34,3 +34,19 @@
     opacity: 1;
 
 }
+
+
+
+/* scoreKeeper style */
+
+.score {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.goal {
+    display: flex;
+}
