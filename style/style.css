@@ -1,20 +1,24 @@
 #slider {
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 500px;
+    height: 400px;
     margin-bottom: 10px;
+
 
 }
 
 .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
     position: absolute;
     visibility: hidden;
     opacity: 0;
     height: 100%;
     width: 100%;
     transition: visibility 0s, opacity 0.5s linear;
-    border-style: solid;
-    border-width: 1px;
+    border-radius: 10%;
 }
 
 .one {
