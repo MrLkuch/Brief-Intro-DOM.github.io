@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carousel</title>
+        <link rel="stylesheet" href="../style/style.css">
+    </head>
+    <body>
+        <div id="slider">
+            <div class="slide one active">1</div>
+            <div class="slide two">2</div>
+            <div class="slide three">3</div>
+        </div>
+        <button class="prev">Prev</button>
+        <button class="next">Next</button>
+        <script>
+            const slides = document.querySelectorAll('.slide');
+            let index = 0;
+
+            function prevSlide() {
+                slides[index].classList.remove('active');
+                index--;
+
+                if (index < 0)
+                    index = slides.length - 1;
+
+                slides[index].classList.add('active');
+            }
+
+            document.querySelector('.prev').addEventListener('click', e => {
+                prevSlide();
+            });
+
+            function nextSlide() {
+                slides[index].classList.remove('active');
+                index++;
+
+                if (index > slides.length - 1)
+                    index = 0;
+
+                slides[index].classList.add('active');
+            }
+
+            document.querySelector('.next').addEventListener('click', e => {
+                nextSlide();
+            });
+        </script>
+    </body>
+</html>
