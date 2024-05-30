@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" id="selectedItem" placeholder="Ajouter des éléments">
+        <button class="add">Ajouter</button>
+        <ul id='list'>
+            <li>exemple</li>
+        </ul>
+        <script>
+            let selectedItem = document.getElementById('selectedItem');
+            function addItem() {
+                let value = selectedItem.value
+
+                let newitem = document.createElement('li');
+                newitem.innerHTML = value;
+                list.append(newitem)
+
+
+            }
+
+            document.querySelector('.add').addEventListener('click', e => {
+                addItem();
+                document.getElementById('selectedItem').value = '';
+            });
+        </script>
+    </body>
+</html>
