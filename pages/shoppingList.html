@@ -3,14 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>ShoopingList</title>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
-        <input type="text" id="selectedItem" placeholder="Ajouter des éléments">
-        <button class="add">Ajouter</button>
-        <ul id='list'>
-            <li>exemple</li>
-        </ul>
+    <body class="grid bg-slate-700 content-center">
+        <nav class="justify-around flex justify-self-center w-6/12 ">
+            <a href="/pages/carousel.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Carousel</a>
+            <a href="/pages/shoppingList.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Shopping
+                List</a>
+            <a href="/pages/scoreKeeper.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Score
+                Keeper</a>
+        </nav>
+        <main class="grid self-center justify-self-center mt-52 w-6/12">
+            <div class="mb-5 w-2/4 justify-self-center h-16">
+                <input type="text" id="selectedItem"
+                       placeholder="Ajouter des éléments">
+                <button
+                        class="add m-2 p-2 bg-teal-300 rounded-md w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Ajouter</button>
+            </div>
+            <div
+                 class="border-solid border-2 border-teal-300 rounded-md p-2 w-2/4 justify-self-center text-teal-300">
+                <ul id='list'>
+                    <li>exemple</li>
+                </ul>
+            </div>
+        </main>
         <script>
             let selectedItem = document.getElementById('selectedItem');
             function addItem() {
