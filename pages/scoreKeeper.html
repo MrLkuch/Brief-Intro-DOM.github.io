@@ -8,19 +8,71 @@
     </head>
     <body>
         <section class="score">
-            <h2>0</h2>
+            <p id="scorePOne">0</p>
             <p>to</p>
-            <h2>0</h2>
+            <p id="scorePTwo">0</p>
         </section>
         <section class="goal">
             <p>Playing to:</p>
-            <p>5</p>
+            <p id="goal">5</p>
         </section>
         <section>
-            <input type="number">
-            <button>Player One</button>
-            <button>Player Two</button>
-            <button>reset</button>
+            <input type="number" id="numInput" value="5">
+            <button class="pOne">Player One</button>
+            <button class="pTwo">Player Two</button>
+            <button class="reset">reset</button>
         </section>
+        <script>
+            let scorePOne = document.getElementById('scorePOne');
+            let scorePTwo = document.getElementById('scorePTwo');
+            let goal = document.getElementById('goal')
+            function addScorePOne() {
+
+                if (scorePOne.innerText < goal.innerText && scorePTwo.innerText < goal.innerText) {
+                    let value = scorePOne.innerText;
+                    scorePOne.innerText = +value + 1;
+                    if (scorePOne.innerText == goal.innerText) {
+                        scorePOne.classList.add('win');
+                    }
+                }
+
+            }
+
+
+            function addScorePTwo() {
+
+                if (scorePOne.innerText < goal.innerText && scorePTwo.innerText < goal.innerText) {
+                    let value = scorePTwo.innerText;
+                    scorePTwo.innerText = +value + 1;
+                    if (scorePTwo.innerText == goal.innerText) {
+                        scorePTwo.classList.add('win');
+                    }
+                }
+
+            }
+
+            function reset() {
+                scorePOne.innerText = 0;
+                scorePTwo.innerText = 0;
+                scorePOne.classList.remove('win')
+                scorePTwo.classList.remove('win')
+            }
+
+
+            document.querySelector('.pOne').addEventListener('click', e => {
+                addScorePOne();
+            });
+            document.querySelector('.pTwo').addEventListener('click', e => {
+                addScorePTwo();
+            });
+            document.querySelector('.reset').addEventListener('click', e => {
+                reset();
+            });
+
+            document.getElementById('numInput').addEventListener('change', e => {
+                goal.innerText = document.getElementById('numInput').value;
+                reset();
+            });
+        </script>
     </body>
 </html>
