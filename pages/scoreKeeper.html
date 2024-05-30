@@ -5,26 +5,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>scoreKeeper</title>
         <link rel="stylesheet" href="../style/style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
-        <section class="score">
-            <p id="scorePOne">0</p>
-            <p>to</p>
-            <p id="scorePTwo">0</p>
-        </section>
-        <section class="goal">
-            <p>Playing to:</p>
-            <p id="goal">5</p>
-        </section>
-        <section>
-            <input type="number" id="numInput" value="5">
-            <button class="pOne">Player One</button>
-            <button class="pTwo">Player Two</button>
-            <button class="reset">reset</button>
-        </section>
+    <body class="grid bg-slate-700 content-center">
+        <nav class="justify-around flex justify-self-center w-6/12 h-20">
+            <a href="/pages/carousel.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Carousel</a>
+            <a href="/pages/shoppingList.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Shopping
+                List</a>
+            <a href="/pages/scoreKeeper.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Score
+                Keeper</a>
+        </nav>
+        <main class="grid self-center justify-self-center mt-52 w-6/12">
+            <section
+                     class="flex justify-around text-2xl w-2/4 justify-self-center items-center mb-5 text-teal-300">
+                <p>GOAL</p>
+                <p id="goal" class="text-5xl">5</p>
+            </section>
+            <section class="score w-full mb-5">
+                <div
+                     class="w-1/2 bg-teal-300 flex justify-center text-teal-800">
+                    <p id="scorePOne">0</p>
+                </div>
+                <div
+                     class="w-1/2 bg-teal-800 flex justify-center text-teal-300">
+                    <p id="scorePTwo">0</p>
+                </div>
+            </section>
+            <section class="grid w-3/4 justify-self-center">
+                <input type="number" id="numInput" value="5"
+                       class="w-2/5 justify-self-center">
+                <div class="flex justify-center my-5 h-16">
+                    <button
+                            class="pOne m-2 p-2 bg-teal-300 rounded-md w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Player
+                        One</button>
+                    <button
+                            class="pTwo m-2 p-2 bg-teal-300 rounded-md w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Player
+                        Two</button>
+                </div>
+                <button
+                        class="reset justify-self-center p-2 bg-teal-300 rounded-md w-1/6 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">reset</button>
+            </section>
+        </main>
         <script>
             let scorePOne = document.getElementById('scorePOne');
             let scorePTwo = document.getElementById('scorePTwo');
+            console.log(scorePTwo)
             let goal = document.getElementById('goal')
             function addScorePOne() {
 
@@ -32,7 +60,7 @@
                     let value = scorePOne.innerText;
                     scorePOne.innerText = +value + 1;
                     if (scorePOne.innerText == goal.innerText) {
-                        scorePOne.classList.add('win');
+                        scorePOne.innerText = 'Win !';
                     }
                 }
 
@@ -45,7 +73,7 @@
                     let value = scorePTwo.innerText;
                     scorePTwo.innerText = +value + 1;
                     if (scorePTwo.innerText == goal.innerText) {
-                        scorePTwo.classList.add('win');
+                        scorePTwo.innerText = 'Win !';
                     }
                 }
 
