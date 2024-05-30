@@ -5,15 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Carousel</title>
         <link rel="stylesheet" href="../style/style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/f0cd4bd620.js"
+                crossorigin="anonymous"></script>
     </head>
-    <body>
-        <div id="slider">
-            <div class="slide one active">1</div>
-            <div class="slide two">2</div>
-            <div class="slide three">3</div>
-        </div>
-        <button class="prev">Prev</button>
-        <button class="next">Next</button>
+    <body class="grid bg-slate-700 content-center">
+        <nav class="justify-around flex justify-self-center w-6/12 h-20">
+            <a href="/pages/carousel.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Carousel</a>
+            <a href="/pages/shoppingList.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Shopping
+                List</a>
+            <a href="/pages/scoreKeeper.html"
+               class="m-2 p-2 bg-teal-300 rounded-md text-3xl w-1/4 text-center hover:border-solid hover:border-2 hover:border-teal-300 hover:bg-teal-800 hover:text-teal-300">Score
+                Keeper</a>
+        </nav>
+        <main
+              class="flex w-4/12 justify-self-center self-center mt-52 justify-around">
+            <div
+                 class="prev w-10 h-10 bg-teal-300 self-center rounded-full flex justify-center">
+                <i
+                   class="fa-solid fa-arrow-left text-teal-800 text-2xl self-center "></i>
+            </div>
+            <div id="slider">
+                <div class="slide one active">1</div>
+                <div class="slide two">2</div>
+                <div class="slide three">3</div>
+            </div>
+            <div
+                 class="next w-10 h-10 bg-teal-300 self-center rounded-full flex justify-center">
+                <i
+                   class="fa-solid fa-arrow-right text-teal-800 text-2xl self-center "></i>
+            </div>
+        </main>
         <script>
             const slides = document.querySelectorAll('.slide');
             let index = 0;
